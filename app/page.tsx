@@ -9,8 +9,19 @@ export default function Home() {
       <Header />
       <main>
         <section className="relative overflow-hidden bg-speed-ink text-white">
-          <img aria-hidden="true" className="absolute inset-0 h-full w-full object-cover object-[64%_center] opacity-58" src="/lead-hero-car.jpg" alt="" />
-          <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(14,14,18,.97)_0%,rgba(14,14,18,.82)_46%,rgba(14,14,18,.46)_100%)]" />
+          <video
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-60 [filter:saturate(1.08)_contrast(1.04)]"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/lead-response-video-poster.jpg"
+          >
+            <source src="/lead-response-video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_20%,rgba(215,19,26,.38),transparent_28%),linear-gradient(100deg,rgba(14,14,18,.98)_0%,rgba(14,14,18,.84)_47%,rgba(14,14,18,.52)_100%)]" />
           <div className="section-shell relative grid gap-10 py-14 md:py-18 lg:min-h-[720px] lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div className="max-w-3xl">
               <h1 className="font-heading text-[clamp(2.55rem,5.8vw,5.1rem)] font-extrabold leading-[1.02] tracking-normal">

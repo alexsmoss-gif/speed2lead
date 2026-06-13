@@ -17,6 +17,8 @@ export default function InternetLeadManagementPage() {
         <PageHero
           title="Internet Lead Management Statistics For Dealerships"
           intro="Online buyers move quickly. Dealership lead management needs speed, structure, and consistent follow-up to convert interest into appointments."
+          image="/training-team.jpg"
+          imagePosition="42% center"
         />
         <section className="bg-white py-20">
           <div className="section-shell">

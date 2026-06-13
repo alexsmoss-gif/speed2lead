@@ -18,6 +18,7 @@ export default function DealershipSalesTrainingPage() {
           title="Dealership Sales Training For Online Leads"
           intro="Help your sales team respond with urgency, confidence, and a clear plan when online prospects enquire about vehicles."
           image="/dealership-training.jpg"
+          imagePosition="50% center"
         />
         <section className="bg-white py-20">
           <div className="section-shell">

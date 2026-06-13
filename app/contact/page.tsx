@@ -17,6 +17,8 @@ export default function ContactPage() {
         <PageHero
           title="Contact Speed 2 Lead"
           intro="Talk to us about improving your dealership's online lead response speed, follow-up process, and appointment setting."
+          image="/training-team.jpg"
+          imagePosition="76% center"
         />
         <section className="bg-white py-20">
           <div className="section-shell grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">

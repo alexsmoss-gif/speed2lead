@@ -104,10 +104,20 @@ export function ContactBand({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function PageHero({ title, intro, image = "/lead-hero-car.jpg" }: { title: string; intro: string; image?: string }) {
+export function PageHero({
+  title,
+  intro,
+  image = "/lead-hero-car.jpg",
+  imagePosition = "64% center",
+}: {
+  title: string;
+  intro: string;
+  image?: string;
+  imagePosition?: string;
+}) {
   return (
     <section className="relative overflow-hidden bg-speed-ink text-white">
-      <img aria-hidden="true" className="absolute inset-0 h-full w-full object-cover object-[64%_center] opacity-55" src={image} alt="" />
+      <img aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-55" style={{ objectPosition: imagePosition }} src={image} alt="" />
       <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(14,14,18,.98)_0%,rgba(14,14,18,.84)_48%,rgba(14,14,18,.52)_100%)]" />
       <div className="section-shell relative py-20 md:py-28">
         <h1 className="max-w-5xl font-heading text-[clamp(2.55rem,6vw,5.3rem)] font-extrabold leading-[1.02] tracking-normal">{title}</h1>

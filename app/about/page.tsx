@@ -17,7 +17,8 @@ export default function AboutPage() {
         <PageHero
           title="About Speed 2 Lead"
           intro="Automotive sales experience and online marketing knowledge combined into practical lead response training for dealership teams."
-          image="/dealership-training.jpg"
+          image="/lead-hero-car.jpg"
+          imagePosition="28% center"
         />
         <section className="bg-speed-ink py-20 text-white">
           <div className="section-shell grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
