@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-poppins: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-figtree: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #151515;
+  font-family: var(--font-figtree), Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mobile-menu-summary::-webkit-details-marker {
+  display: none;
+}
+
+::selection {
+  background: #ffd23c;
+  color: #111116;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: #d7131a;
+}
+
+.header-logo-entrance {
+  overflow: visible;
+  transform-origin: left center;
+  animation: logo-slide-in-settle 2250ms cubic-bezier(0.18, 0.84, 0.24, 1) both;
+  will-change: opacity, transform;
+}
+
+.header-logo-entrance img {
+  transform-origin: left center;
+}
+
+.header-logo-entrance:hover img,
+.header-logo-entrance:focus-visible img {
+  animation: logo-scale-settle 1170ms cubic-bezier(0.2, 0.86, 0.28, 1) both;
+}
+
+@keyframes logo-slide-in-settle {
+  0% {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.92);
+  }
+
+  62% {
+    opacity: 1;
+    transform: translateX(4px) scale(1.035);
+  }
+
+  82% {
+    transform: translateX(-1px) scale(0.992);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes logo-scale-settle {
+  0% {
+    transform: scale(1);
+  }
+
+  56% {
+    transform: scale(1.045);
+  }
+
+  78% {
+    transform: scale(0.99);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.box-hover-lift,
+.box-hover-glow,
+.box-hover-tilt,
+.box-hover-slide,
+.box-hover-pop {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+  will-change: transform;
+}
+
+.box-hover-lift:hover {
+  border-color: rgba(215, 19, 26, 0.75);
+  box-shadow: 0 20px 55px rgba(21, 21, 21, 0.12);
+  transform: translateY(-7px);
+}
+
+.box-hover-glow:hover {
+  border-color: rgba(215, 19, 26, 0.7);
+  box-shadow:
+    0 0 0 1px rgba(215, 19, 26, 0.22),
+    0 0 38px rgba(215, 19, 26, 0.2),
+    0 20px 48px rgba(21, 21, 21, 0.1);
+  transform: translateY(-4px) scale(1.015);
+}
+
+.box-hover-tilt:hover {
+  border-color: rgba(215, 19, 26, 0.75);
+  box-shadow: 0 18px 46px rgba(21, 21, 21, 0.12);
+  transform: translateY(-5px) rotate(-0.7deg);
+}
+
+.box-hover-slide:hover {
+  border-color: rgba(215, 19, 26, 0.75);
+  box-shadow: 0 16px 42px rgba(21, 21, 21, 0.1);
+  transform: translateX(6px);
+}
+
+.box-hover-pop:hover {
+  border-color: rgba(215, 19, 26, 0.75);
+  box-shadow: 0 22px 58px rgba(215, 19, 26, 0.16);
+  transform: translateY(-4px) scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-logo-entrance,
+  .header-logo-entrance:hover img,
+  .header-logo-entrance:focus-visible img {
+    animation: none;
+  }
+
+  .box-hover-lift,
+  .box-hover-glow,
+  .box-hover-tilt,
+  .box-hover-slide,
+  .box-hover-pop {
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .box-hover-lift:hover,
+  .box-hover-glow:hover,
+  .box-hover-tilt:hover,
+  .box-hover-slide:hover,
+  .box-hover-pop:hover {
+    transform: none;
+  }
+}
