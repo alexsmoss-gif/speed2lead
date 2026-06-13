@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contactEmail, navItems, phoneNumber, whatsappUrl } from "./data";
+import { contactEmail, location, navItems, phoneNumber, serviceAreas, siteUrl, whatsappUrl } from "./data";
 
 export function Header() {
   return (
@@ -53,12 +53,15 @@ export function Footer() {
             Internet lead response training for motor dealership teams that want faster contact, better appointments, and stronger sales outcomes.
           </p>
         </div>
-        <div className="grid gap-3 text-white/78 sm:grid-cols-2">
-          {["Fast response habits", "Online lead handling", "Sales team coaching", "Dealership-focused training"].map((item) => (
-            <span key={item} className="rounded-md border border-white/12 p-4 font-bold">
-              {item}
-            </span>
-          ))}
+        <div>
+          <h2 className="font-heading text-2xl font-extrabold">Pages</h2>
+          <nav className="mt-5 grid gap-3 text-white/78 sm:grid-cols-2">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="rounded-md border border-white/12 p-4 font-bold transition hover:border-speed-gold hover:text-speed-gold">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
         <div>
           <h2 className="font-heading text-2xl font-extrabold">Contact</h2>
@@ -66,6 +69,7 @@ export function Footer() {
             <Link className="font-bold text-speed-gold" href={whatsappUrl}>Chat On WhatsApp</Link>
             <a className="font-bold text-white/78" href={`mailto:${contactEmail}`}>{contactEmail}</a>
             <a className="font-bold text-white/78" href={`tel:${phoneNumber.replace(/\s/g, "")}`}>{phoneNumber}</a>
+            <span className="font-bold text-white/78">{location}</span>
           </div>
         </div>
       </div>
@@ -77,13 +81,13 @@ export function Footer() {
   );
 }
 
-export function ContactBand() {
+export function ContactBand({ compact = false }: { compact?: boolean }) {
   return (
     <section id="contact" className="bg-speed-red text-white">
       <div className="section-shell grid gap-8 py-16 text-center md:grid-cols-[1fr_auto] md:items-center md:text-left">
         <div>
           <h2 className="font-heading text-4xl font-extrabold leading-tight md:text-5xl">Questions About Lead Response Training?</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/88 md:mx-0">
+          <p className={`mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/88 md:mx-0 ${compact ? "md:max-w-xl" : ""}`}>
             We help dealership teams improve response strategies, follow-up habits, and sales conversations.
           </p>
         </div>
@@ -98,6 +102,47 @@ export function ContactBand() {
       </div>
     </section>
   );
+}
+
+export function PageHero({ title, intro, image = "/lead-hero-car.jpg" }: { title: string; intro: string; image?: string }) {
+  return (
+    <section className="relative overflow-hidden bg-speed-ink text-white">
+      <img aria-hidden="true" className="absolute inset-0 h-full w-full object-cover object-[64%_center] opacity-55" src={image} alt="" />
+      <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(14,14,18,.98)_0%,rgba(14,14,18,.84)_48%,rgba(14,14,18,.52)_100%)]" />
+      <div className="section-shell relative py-20 md:py-28">
+        <h1 className="max-w-5xl font-heading text-[clamp(2.55rem,6vw,5.3rem)] font-extrabold leading-[1.02] tracking-normal">{title}</h1>
+        <p className="mt-7 max-w-3xl text-lg leading-8 text-white/78 md:text-xl">{intro}</p>
+      </div>
+    </section>
+  );
+}
+
+export function StructuredData() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Speed 2 Lead",
+    url: siteUrl,
+    email: contactEmail,
+    telephone: phoneNumber,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Edenvale",
+      addressRegion: "Gauteng",
+      postalCode: "1609",
+      addressCountry: "ZA",
+    },
+    areaServed: serviceAreas,
+    serviceType: [
+      "Internet lead response training",
+      "Motor dealership sales training",
+      "Online lead management consulting",
+    ],
+    description:
+      "Speed 2 Lead helps motor dealership teams respond to online leads faster, set better appointments, and improve sales performance.",
+  };
+
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }
 
 export function WhatsAppButton() {

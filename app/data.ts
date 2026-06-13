@@ -11,10 +11,11 @@ export const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessa
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Training", href: "#training" },
-  { label: "Impact", href: "#impact" },
-  { label: "Stats", href: "#stats" },
-  { label: "Contact", href: "#contact" },
+  { label: "Lead Response", href: "/lead-response-training" },
+  { label: "Dealer Training", href: "/dealership-sales-training" },
+  { label: "Stats", href: "/internet-lead-management" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const pillars = [
@@ -71,4 +72,15 @@ export const dealerStats = [
   "More likely to convert if the call is made in 5 minutes",
   "Many teams fail to ask the client for an appointment",
   "Many teams fail to suggest another vehicle if the enquired vehicle is sold",
+];
+
+export const siteUrl = "https://www.speed2lead.co.za";
+
+export const serviceAreas = [
+  "Edenvale",
+  "Gauteng",
+  "Johannesburg",
+  "South Africa",
+  "Motor dealerships",
+  "Franchise dealer groups",
 ];
