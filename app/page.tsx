@@ -17,9 +17,9 @@ export default function Home() {
             muted
             playsInline
             preload="metadata"
-            poster="/lead-response-video-poster.jpg"
+            poster="/lead-hero-car.jpg"
           >
-            <source src="/lead-response-video.mp4" type="video/mp4" />
+            <source src="/speed2lead-hero-motion.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_20%,rgba(215,19,26,.38),transparent_28%),linear-gradient(100deg,rgba(14,14,18,.98)_0%,rgba(14,14,18,.84)_47%,rgba(14,14,18,.52)_100%)]" />
           <div className="section-shell relative grid gap-10 py-14 md:py-18 lg:min-h-[720px] lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
