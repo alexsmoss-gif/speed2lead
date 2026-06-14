@@ -17,8 +17,8 @@ export default function LeadResponseTrainingPage() {
         <PageHero
           title="Internet Lead Response Training For Car Dealers"
           intro="Train your sales team to act quickly, speak clearly, and turn online enquiries into useful conversations before the prospect moves to another dealer."
-          image="/training-team.jpg"
-          imagePosition="44% center"
+          image="/lead-response-training-hero.png"
+          imagePosition="64% center"
         />
         <section className="bg-speed-mist py-20">
           <div className="section-shell">
