@@ -80,14 +80,16 @@ export default function Home() {
         </section>
 
         <section className="bg-white py-20">
-          <div className="section-shell grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <img className="aspect-[4/3] w-full rounded-md object-cover shadow-crisp" src="/training-team.jpg" alt="Sales team training session" />
-            <div>
+          <div className="section-shell">
+            <div className="mx-auto max-w-4xl text-center">
               <h2 className="font-heading text-4xl font-extrabold leading-tight md:text-6xl">Driving Better Internet Lead Outcomes</h2>
-              <p className="mt-6 text-lg leading-8 text-speed-charcoal">
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-speed-charcoal">
                 Speed 2 Lead focuses on practical improvements that sales teams can use immediately after training.
               </p>
-              <div className="mt-8 grid gap-4">
+            </div>
+            <div className="mt-12 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+              <img className="aspect-[4/3] w-full rounded-md object-cover shadow-crisp" src="/homepage-lead-outcomes.png" alt="Dealership consultant responding to an online vehicle lead" />
+              <div className="grid gap-4">
                 {outcomes.map((item) => (
                   <article key={item.title} className="box-hover-slide rounded-md border border-black/10 p-5">
                     <h3 className="font-heading text-2xl font-extrabold">{item.title}</h3>
